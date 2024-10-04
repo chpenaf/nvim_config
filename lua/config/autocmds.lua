@@ -3,4 +3,8 @@
 -- Add any additional autocmds here
 
 -- Script to detect cds file
-vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, { pattern = '*.cds', command = 'set filetype=cds' })
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*.cds", command = "set filetype=cds" })
+
+if vim.fn.executable("pwsh") == 1 then
+  vim.o.shell = "pwsh"
+end
